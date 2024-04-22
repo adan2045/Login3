@@ -3,10 +3,12 @@ var_dump($_POST['ingreso']);
 
 $usuarioPrueba_user ='usuario@prueba.ts';
 $contraseñaPrueba_user ='contraseña';
+
 //$contraseñaPrueba_hash = password_hash('contraseña', );
-
-
-
+$email= " ";
+$pasword= " ";
+$error_mail= " ";
+$error_pasword= " ";
 
 
 echo"<pre>";
@@ -62,12 +64,13 @@ if (isset($_POST['ingreso'])) {
 
                 else{
                     if ($email === $usuarioPrueba_user) {
-                        $verificar = password_verify($password, $usuarioPrueba_passHash);
+                        $verificar = password_verify($password,
+                         $usuarioPrueba_passHash);
                         if ($verificar===false){
                             echo "contraseña incorrecta <hr>";
                         }else{ 
-                            echo "todo ok <hr>"
-                        }else {
+                            echo "todo ok <hr>";
+                        }} else {
                             echo "usuario incorrecto<hr>";
                          }
 
@@ -75,7 +78,7 @@ if (isset($_POST['ingreso'])) {
                 }
             }
         }
-    }  else {
+      else {
     echo'Botón de ingreso no existe.<hr>';
 }
 
