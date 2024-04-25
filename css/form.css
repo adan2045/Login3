@@ -38,3 +38,8 @@ h1 {
     color: white;
 
 }
+.msg_error {
+    background-color: white;
+    color:rgb(167, 5, 5);
+    font-size: 0.9rem;
+}
