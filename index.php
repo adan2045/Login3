@@ -141,6 +141,8 @@ if (isset($_POST['ingreso'])) {
         }
     } 
     */
+
+    
 } else {
     echo'Botón de ingreso no existe.<hr>';
 }
