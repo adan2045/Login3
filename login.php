@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+if (!isset($_SESSION ['flag'])){
+    $_SESSION ['flag']=false;
+}else{
+     if ($_SESSION ['flag']==true){
+         header('Location:bienvenido.php');
+     } 
+}
+
+
 $usuarioPrueba_user ='usuario@prueba.ts';
 $usuarioPrueba_pass ='password';
 $usuarioPrueba_passHash = password_hash($usuarioPrueba_pass, PASSWORD_DEFAULT);
@@ -95,7 +106,9 @@ if (isset($_POST['ingreso'])) {
                 $error_pass = 'Contraseña incorrecta';
                 $errorFlag = true;
             } else {
-                echo 'Todo correcto!BIENVENIDO!.<hr>';
+                echo 'bienvenido.<hr>';
+                header('Location:sesion2.php');
+        exit();
             }
         } else {
             $error_mail = 'Usuario incorrecto';
